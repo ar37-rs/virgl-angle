@@ -14,3 +14,5 @@ or
 ```
 ~/cli/vgl your_termux_x11_binary_app
 ```
+# source code building angle-android:
+https://github.com/termux/termux-packages/tree/master/packages/angle-android
