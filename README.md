@@ -6,7 +6,11 @@ wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24321/a
 tar -xvf angle-android_2.1.24321-aarch64.tar.xz
 ```
 ## Usage:
-simply
+Make sure to kill the current running process virgl before launching your app like so:
+```
+vgl q
+```
+and then simply
 ```
 ~/cli/vgl firefox
 ```
