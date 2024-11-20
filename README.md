@@ -2,8 +2,8 @@
 ## Install:
 ```
 pkg install tar wget virglrenderer
-wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24345/angle-android_2.1.24345-aarch64.tar.xz
-tar -xvf angle-android_2.1.24345-aarch64.tar.xz
+wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24348/angle-android_2.1.24348-aarch64.tar.xz
+tar -xvf angle-android_2.1.24348-aarch64.tar.xz
 ```
 ## Usage:
 Make sure to kill the current running process of virgl_test_* before launching your app like so:
