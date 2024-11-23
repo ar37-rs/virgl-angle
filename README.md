@@ -8,7 +8,8 @@ tar -xvf angle-android_2.1.24391-aarch64.tar.xz
 ## Usage:
 Make sure to kill the current running process of virgl_test_* before launching your app like so:
 ```
-~cli/vgl q
+chmod +x ~/cli/vgl
+~/cli/vgl q
 ```
 and then simply
 ```
