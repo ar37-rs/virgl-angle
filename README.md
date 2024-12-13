@@ -2,7 +2,7 @@
 
 ## Install:
 ```
-cd && pkg install tar wget virglrenderer angle-android
+cd && pkg install wget virglrenderer angle-android
 wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24521/vglx && chmod +x ~/vglx
 ```
 ## Usage:
@@ -23,22 +23,10 @@ or
 
 ## Install:
 ```
-cd && pkg install tar wget virglrenderer
-wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24521/angle-android_2.1.24521-aarch64.tar.xz
-tar -xvf angle-android_2.1.24521-aarch64.tar.xz && chmod +x ~/cli/vgl
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24521/angle-android_2.1.24521_aarch64.deb
+dpkg -i angle-android_2.1.24521_aarch64.deb
 ```
-## Usage:
-Make sure to kill the current running process of virgl_test_* before launching your app like so:
-```
-~/cli/vgl q
-```
-and then simply
-```
-~/cli/vgl firefox
-```
-or
-```
-~/cli/vgl your_termux_x11_binary_app
-```
+and then repeat usage above.
+
 # source code building angle-android from termux official:
 https://github.com/termux/termux-packages/tree/master/packages/angle-android
