@@ -28,5 +28,11 @@ dpkg -i angle-android_2.1.24533_aarch64.deb
 ```
 and then repeat usage above.
 
+# On proot:
+copy vgl file like so:
+```
+cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
+```
+
 # source code building angle-android from termux official:
 https://github.com/termux/termux-packages/tree/master/packages/angle-android
