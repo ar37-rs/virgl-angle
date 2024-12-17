@@ -5,7 +5,7 @@ cd && pkg install wget virglrenderer angle-android
 rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/vgl && chmod +x ~/vgl
 ```
 ## Usage:
-Make sure to use EGL angle before launching your app like so:
+Make sure to use EGL angle config before launching your app like so:
 ```
 ~/vgl use-egl
 ```
@@ -24,6 +24,8 @@ To fix virglrenderer-v1.x.x incorrect color (too dark) on d3d
 ```
 ~/vgl use-d3d
 ```
+note:
+for OpenGL apps/games on wine use egl config as above.
 
 # Usage on proot-distro:
 Copy vgl file like so:
