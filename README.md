@@ -5,7 +5,7 @@ cd && pkg install wget virglrenderer angle-android
 rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/vgl && chmod +x ~/vgl
 ```
 ## Usage:
-Make sure to kill the current running process of virgl_test_* and use EGL angle before launching your app like so:for d3d (Direct 3D) apps/games on wine 
+Make sure to use EGL angle before launching your app like so:
 ```
 ~/vgl use-egl
 ```
