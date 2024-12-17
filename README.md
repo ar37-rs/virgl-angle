@@ -24,6 +24,12 @@ or
 ~/vgl your_termux_x11_binary_app
 ```
 
+(Note): to switch back using angle-vulkan use command,
+```
+~/vgl use-angle
+```
+
+
 # Usage on wine:
 To fix virglrenderer-v1.x.x incorrect color (too dark) on d3d
 (Direct X) apps/games use d3d config like so:
