@@ -10,7 +10,7 @@ Make sure to use EGL angle config before launching your app like so:
 ~/vgl use-egl
 ```
 
-or use virgl android (fix for adreno gpus unable to use angle-vulkan-null issue)
+or use virgl android (fix for some gpus unable to use angle-vulkan-null issue)
 ```
 ~/vgl use-egl && ~/vgl use-android
 ```
