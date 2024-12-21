@@ -50,11 +50,11 @@ Copy vgl file like so:
 cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 ```
 
-# Using angle-android (built 2024.12.18) optional for testing only:
+# Using angle-android (built 2024.12.20) optional for testing only:
 Install:
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24553/angle-android_2.1.24553_aarch64.deb
-dpkg -i angle-android_2.1.24553_aarch64.deb
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24559/angle-android_2.1.24559_aarch64.deb
+dpkg -i angle-android_2.1.24559_aarch64.deb
 ```
 and then repeat usage above.
 
