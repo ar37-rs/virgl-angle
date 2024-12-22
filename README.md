@@ -50,11 +50,12 @@ Copy vgl file like so:
 cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 ```
 
-# Using angle-android (built 2024.12.20) optional for testing only:
+# Using angle-android (2024.12.21) for android 8+ only
+# prebuilt vulkan headless with validation layer (fast and more stable):
 Install:
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24559/angle-android_2.1.24559_aarch64.deb
-dpkg -i angle-android_2.1.24559_aarch64.deb
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24562/angle-android_2.1.24562_aarch64.deb
+dpkg -i angle-android_2.1.24562_aarch64.deb
 ```
 and then repeat usage above.
 
