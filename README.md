@@ -52,11 +52,17 @@ cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 
 # Using angle-android (2024.12.21) for android 8+ only
 # prebuilt vulkan headless with validation layer (fast and more stable):
-Install:
+Install 13.9 MB:
 ```
 cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24562/angle-android_2.1.24562_aarch64.deb
 dpkg -i angle-android_2.1.24562_aarch64.deb
 ```
+or minimal version without vulkan validation layer 2.9 MB (slower):
+```
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24562/angle-android_2.1.24562_aarch64.deb
+dpkg -i angle-android_2.1.24562_minimal.deb
+```
+
 and then repeat usage above.
 
 # source code building angle-android from termux official:
