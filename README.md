@@ -50,17 +50,17 @@ Copy vgl file like so:
 cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 ```
 
-# Using angle-android (2024.12.21) for android 8+ only
+# Using angle-android (2024.12.21) fix for vulkan crashing on some android 8+
 # prebuilt vulkan headless with validation layer (fast and more stable):
 Install 13.9 MB:
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24562/angle-android_2.1.24562_aarch64.deb
-dpkg -i angle-android_2.1.24562_aarch64.deb
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24565/angle-android_2.1.24565_aarch64.deb
+dpkg -i angle-android_2.1.24565_aarch64.deb
 ```
-or minimal version without vulkan validation layer 2.9 MB (slower):
+or minimal version (for android 7+) without vulkan validation layer 2.9 MB (slower):
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24562/angle-android_2.1.24562_aarch64.deb
-dpkg -i angle-android_2.1.24562_minimal.deb
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24565/angle-android_2.1.24565_aarch64.deb
+dpkg -i angle-android_2.1.24565_minimal.deb
 ```
 
 and then repeat usage above.
