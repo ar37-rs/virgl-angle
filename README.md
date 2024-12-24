@@ -51,8 +51,7 @@ cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 ```
 
 # Using angle-android (2024.12.21) fix for vulkan crashing on some android 8+
-# prebuilt vulkan headless with validation layer (fast and more stable):
-Install 13.9 MB:
+prebuilt vulkan headless with validation layer (fast and more stable) 13.9 MB:
 ```
 cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24565/angle-android_2.1.24565_aarch64.deb
 dpkg -i angle-android_2.1.24565_aarch64.deb
