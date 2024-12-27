@@ -31,7 +31,7 @@ or
 
 
 # Usage on wine:
-To fix virglrenderer-v1.x.x incorrect color (too dark) on d3d
+If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x such incorrect color (or too dark) on d3d
 (Direct X) apps/games use d3d config like so:
 ```
 ~/vgl use-d3d
