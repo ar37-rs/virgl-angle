@@ -21,7 +21,7 @@ and then simply
 ```
 or
 ```
-~/vgl your_termux_x11_binary_app
+~/vgl any_termux_x11_binary_app
 ```
 
 (Note): to switch back using angle-vulkan use command,
