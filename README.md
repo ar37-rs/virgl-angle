@@ -1,5 +1,4 @@
-# Virglrenderer angle-vulkan for android aarch64 termux.
-Install:
+## Install:
 ```
 cd && pkg install wget virglrenderer-android virglrenderer angle-android
 rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/vgl && chmod +x ~/vgl
