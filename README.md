@@ -58,7 +58,7 @@ dpkg -i angle-android_2.1.24570_aarch64.deb
 ```
 or minimal version (for android 7+) without vulkan validation layer 2.9 MB (slower):
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24570/angle-android_2.1.24570_aarch64.deb
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24570/angle-android_2.1.24570_minimal.deb
 dpkg -i angle-android_2.1.24570_minimal.deb
 ```
 
