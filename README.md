@@ -1,4 +1,5 @@
-## Install:
+# Making virgl setup easier and simpler on termux.
+Install:
 ```
 cd && pkg install wget virglrenderer-android virglrenderer angle-android
 rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/vgl && chmod +x ~/vgl
