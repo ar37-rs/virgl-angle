@@ -38,7 +38,7 @@ If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x su
 ```
 and then
 ```
-~/vgl wine your_d3d_games
+~/vgl wine any_d3d_games
 ```
 
 note:
