@@ -33,13 +33,13 @@ and then
 ```
 ~/vgl wine any_d3d_games
 ```
-to switch back using OpenGL/ES config use command,
+to switch back using OpenGL config use command,
 ```
 ~/vgl cfg-gl
 ```
 
 # Note:
-for OpenGL apps/games on wine use-gl config as above.
+for OpenGL apps/games on wine use OpenGL config as above.
 
 # Usage on proot-distro:
 Copy vgl file like so:
