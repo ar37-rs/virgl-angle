@@ -4,17 +4,16 @@ Install:
 cd && pkg install wget virglrenderer-android virglrenderer angle-android
 rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/vgl && chmod +x ~/vgl
 ```
-## Usage:
-Make sure to use EGL angle config before launching your app like so:
-```
-~/vgl use-egl
-```
 
+## Usage:
+Make sure to set config before launching your app like so:
+```
+~/vgl use-angle
+```
 or use virgl android (fix for some gpus unable to use angle-vulkan issue)
 ```
-~/vgl use-egl && ~/vgl use-android
+~/vgl use-android
 ```
-
 and then simply
 ```
 ~/vgl firefox
@@ -23,12 +22,6 @@ or
 ```
 ~/vgl any_termux_x11_binary_app
 ```
-
-(Note): to switch back using angle-vulkan use command,
-```
-~/vgl use-angle
-```
-
 
 # Usage on wine:
 If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x such incorrect color (or too dark) on d3d
@@ -40,9 +33,13 @@ and then
 ```
 ~/vgl wine any_d3d_games
 ```
+to switch back using OpenGL/ES config use command,
+```
+~/vgl use-gl
+```
 
-note:
-for OpenGL apps/games on wine use egl config as above.
+# Note:
+for OpenGL apps/games on wine use-gl config as above.
 
 # Usage on proot-distro:
 Copy vgl file like so:
