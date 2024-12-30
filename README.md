@@ -27,7 +27,7 @@ or
 If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x such incorrect color (or too dark) on d3d
 (Direct X) apps/games use d3d config like so:
 ```
-~/vgl use-d3d
+~/vgl cfg-d3d
 ```
 and then
 ```
@@ -35,7 +35,7 @@ and then
 ```
 to switch back using OpenGL/ES config use command,
 ```
-~/vgl use-gl
+~/vgl cfg-gl
 ```
 
 # Note:
