@@ -35,6 +35,12 @@ and then
 ```
 ~/vgl wine any_d3d_games
 ```
+or
+
+[(Read more for info on how install and run wine using xow64 script)](https://github.com/ar37-rs/xow64-wine)
+```
+~/vgl ~/xow64 s
+```
 to switch back using OpenGL config use command,
 ```
 ~/vgl cfg-gl
