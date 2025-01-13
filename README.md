@@ -37,10 +37,8 @@ and then
 ```
 or
 
-[(Read more for info on how install and run wine using xow64 script)](https://github.com/ar37-rs/xow64-wine)
-```
-~/vgl ~/xow64 s
-```
+[(Read for more info on how install and run wine using xow64_wine + virgl)](https://github.com/ar37-rs/xow64-wine)
+
 to switch back using OpenGL config use command,
 ```
 ~/vgl cfg-gl
