@@ -53,6 +53,14 @@ Copy vgl file like so:
 cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 ```
 
+# Using virglrenderer-1.1.0 with patched direct xcb connection
+for faster FPS and lower overhead (can be used with specific patched mesa virpipe driver):
+
+```
+cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64.deb
+dpkg -i virglrenderer_1.1.0-11_aarch64.deb
+```
+
 # Using angle-android (2025.01.07) fix for vulkan crashing on some android 8+
 prebuilt vulkan with validation layer (fast and more stable) 13.9 MB:
 ```
@@ -69,3 +77,10 @@ and then repeat usage above.
 
 # source code building angle-android from termux official:
 https://github.com/termux/termux-packages/tree/master/packages/angle-android
+
+# source code building virglrenderer direct connection from termux official:
+https://github.com/termux/termux-packages/tree/virglrenderer-direct-x-connection/packages/virglrenderer-android
+
+# Best Regards and Thanks to:
+[Twaik Yont](https://github.com/twaik), [Termux Team and Maintainers]( https://github.com/termux) and many other contributors for making termux things happen.
+
