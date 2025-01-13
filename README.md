@@ -57,19 +57,19 @@ cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 for faster FPS and lower overhead (can be used with specific patched mesa virpipe driver):
 
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64.deb
+cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64.deb
 dpkg -i virglrenderer_1.1.0-11_aarch64.deb
 ```
 
 # Using angle-android (2025.01.07) fix for vulkan crashing on some android 8+
 prebuilt vulkan with validation layer (fast and more stable) 13.9 MB:
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24608/angle-android_2.1.24608_aarch64.deb
+cd && rm -rf angle-android_2.1.24608_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24608/angle-android_2.1.24608_aarch64.deb
 dpkg -i angle-android_2.1.24608_aarch64.deb
 ```
 or minimal version (for android 7+) without vulkan validation layer 2.9 MB (slower):
 ```
-cd && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24570/angle-android_2.1.24570_minimal.deb
+cd && rm -rf angle-android_2.1.24570_minimal.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/2.1.24570/angle-android_2.1.24570_minimal.deb
 dpkg -i angle-android_2.1.24570_minimal.deb
 ```
 
