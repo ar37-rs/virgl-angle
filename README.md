@@ -65,11 +65,18 @@ cd && rm -rf ~/angle-android_2.1.24570_minimal.deb && wget https://github.com/ar
 dpkg -i ~/angle-android_2.1.24570_minimal.deb
 ```
 
-# Using virglrenderer-1.1.0 with patched direct xcb connection
-for faster FPS and lower overhead (can be used with specific patched mesa virpipe driver):
+# Using virglrenderer-1.1.0 newer build (stable, android 10+ only)
+(recommended for stability);
 ```
 cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64.deb
 dpkg -i ~/virglrenderer_1.1.0-11_aarch64.deb
+```
+
+# Using virglrenderer-1.1.0 with patched direct xcb connection (unstable, android 8+ only)
+faster FPS and unstable (can be used with specific patched mesa virpipe driver):
+```
+cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64-patched.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64-patched.deb
+dpkg -i ~/virglrenderer_1.1.0-11_aarch64-patched.deb
 ```
 
 and then repeat usage above.
