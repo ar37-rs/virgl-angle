@@ -25,6 +25,17 @@ or
 ~/vgl any_termux_x11_binary_app
 ```
 
+# Additional usage:
+Terminate virgl_test_server*
+```
+~/vgl q
+```
+
+Update angle-android with the latest build
+```
+~/vgl update-angle
+```
+
 # Usage on wine:
 If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x such incorrect color (or too dark) on d3d
 (Direct X) apps/games use d3d config like so:
