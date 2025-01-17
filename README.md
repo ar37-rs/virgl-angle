@@ -59,7 +59,7 @@ Update angle-android with the latest build
 If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x such incorrect color (or too dark) on d3d
 (Direct X) apps/games use d3d config like so:
 ```
-~/vgl cfg-d3d
+~/vgl config=d3d
 ```
 and then
 ```
@@ -71,7 +71,7 @@ or
 
 to switch back using OpenGL config use command,
 ```
-~/vgl cfg-gl
+~/vgl config=gl
 ```
 
 # Note:
