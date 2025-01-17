@@ -84,12 +84,12 @@ cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 ```
 
 # Using angle-android latest build fix for vulkan crashing on some android 8+
-prebuilt vulkan with validation layer + display headless mode (faster and more stable) 13.9 MB:
+prebuilt vulkan with validation layer (more stable) 13.9 MB:
 ```
 cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.2-latest.deb
 dpkg -i ~/angle-android_2.1.2-latest.deb
 ```
-or minimal version (for android 7+) without vulkan validation layer 2.9 MB (slower):
+or minimal version (for android 7+) without vulkan validation layer 2.9 MB:
 ```
 cd && rm -rf ~/angle-android_2.1.24570_minimal.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.24570_minimal.deb
 dpkg -i ~/angle-android_2.1.24570_minimal.deb
@@ -117,6 +117,6 @@ https://github.com/termux/termux-packages/tree/master/packages/angle-android
 # source code building virglrenderer direct connection from termux official:
 https://github.com/termux/termux-packages/tree/virglrenderer-direct-x-connection/packages/virglrenderer-android
 
-# Best Regards and Thanks to:
+# Thanks to:
 [Twaik Yont](https://github.com/twaik), [Termux Team and Maintainers]( https://github.com/termux) and many other contributors for making termux things happen.
 
