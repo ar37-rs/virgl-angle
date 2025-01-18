@@ -102,8 +102,8 @@ cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64.deb && wget https://github.com/ar3
 dpkg -i ~/virglrenderer_1.1.0-11_aarch64.deb
 ```
 
-# Using virglrenderer-1.1.0 with patched direct xcb connection (unstable, android 8+ only)
-faster FPS and unstable (can be used with specific patched mesa virpipe driver):
+# Using virglrenderer-1.1.0 with patched direct xcb connection (unstable and not recommended, android 8+ only)
+still very buggy (can be used with specific patched mesa virpipe driver):
 ```
 cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64-patched.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64-patched.deb
 dpkg -i ~/virglrenderer_1.1.0-11_aarch64-patched.deb
