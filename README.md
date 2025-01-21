@@ -50,7 +50,7 @@ Terminate running virgl process
 ~/vgl q
 ```
 
-Update angle-android with the latest build
+Update angle-android with the latest build (for android 9+ only)
 ```
 ~/vgl update-angle
 ```
