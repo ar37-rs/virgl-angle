@@ -28,23 +28,43 @@ else
     # export VREND_TWEAK=bgra-dest-swz
 fi
 
+for a in $@; do
+    case $a in
+        -Q) set -x;;
+    esac
+done
+
+if test "$1" = "-Q"; then shift; fi
+
 vhelp() {
    echo
    echo "Use 'vgl i' to install virgl android"
+   echo "Use 'vgl option' from use-android use-angle config=gl  config=d3d"
    echo "and use 'vgl target_app' to launch specific app"
    echo "or 'vgl q' to kill virgl_test server"
+   echo or 'vgl -Q ...' for loud output for all of the above '(set -x)'
    echo
 }
 
 killvirgl() {
     if [[ $(pgrep -f "virgl") != "" ]]; then
-        kill -9 $(pgrep -f "virgl_test_server_android") 2>/dev/null
+        kill -9 $(pgrep -f $VGL) 2>/dev/null
         kill -9 $(pgrep -f "virgl_test_server") 2>/dev/null
         kill -9 $(pgrep -f "virgl") 2>/dev/null
         echo "virgl server killed."
     fi
 }
 
+have_angle() {
+    # the old horrible name 
+    which virgl_test_server_android > /dev/null 2>&1
+    old=$?
+    test $old -eq 0 && VGL=virgl_test_server_android
+    which virgl-angle > /dev/null 2>&1
+    new=$?
+    test $new -eq 0 && VGL=virgl-angle
+    test $old -ne 0 && test $new  -ne 0 && echo could not find server rerun command with -Q for loud output  && exit
+}
 
 start_vgl() {
     if [ -f ~/.vgl-angle-gl ]; then
@@ -72,7 +92,8 @@ start_vgl() {
         LD_LIBRARY_PATH=/data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE} virgl_test_server --use-egl-surfaceless --use-gles &
         sleep 1
     elif [[ $(pgrep -f 'virgl_test') == "" && -f ~/.vgl-android ]]; then
-        virgl_test_server_android &
+        have_angle
+        $VGL &
         sleep 1
     fi
 
