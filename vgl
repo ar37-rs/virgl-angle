@@ -1,0 +1,160 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# https://github.com/ar37-rs
+
+export MESA_GL_VERSION_OVERRIDE=4.1COMPAT
+export MESA_GLSL_VERSION_OVERRIDE=410
+# export VTEST_USE_COMPATIBILITY_PROFILE=1
+# export MESA_GLTHREAD=true
+export MESA_GLES_VERSION_OVERRIDE=3.1
+# fix if used along side override zink
+export MESA_LOADER_DRIVER_OVERRIDE=
+# export LIBGL_DRI3_DISABLE=1
+# disable dri3 alternative
+export LIBGL_ALWAYS_SOFTWARE=1
+# use virpipe
+export GALLIUM_DRIVER=virpipe
+export MESA_NO_ERROR=1
+# back buffer type Pixmap or XImage (for x11 legacy drawing mode)
+export MESA_BACK_BUFFER=pixmap
+# disable wine debugger for performance.
+# export WINEDEBUG=-all
+# disable buffer storage arb/ext for performance (unstable)
+# add "-GL_ARB_buffer_storage -GL_EXT_buffer_storage"
+
+if [ ! -f ~/.vgl-d3d ]; then
+    export MESA_EXTENSION_OVERRIDE="+GL_ARB_compute_shader +GL_ARB_compute_variable_group_size +GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
+else
+    export MESA_EXTENSION_OVERRIDE="+GL_ARB_compute_shader +GL_ARB_compute_variable_group_size +GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB -GL_EXT_texture_sRGB_R8 -GL_EXT_texture_sRGB_RG8 +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
+    # export VREND_TWEAK=bgra-dest-swz
+fi
+
+vhelp() {
+   echo
+   echo "Use 'vgl i' to install virgl android"
+   echo "and use 'vgl target_app' to launch specific app"
+   echo "or 'vgl q' to kill virgl_test server"
+   echo
+}
+
+killvirgl() {
+    if [[ $(pgrep -f "virgl") != "" ]]; then
+        kill -9 $(pgrep -f "virgl_test_server_android") 2>/dev/null
+        kill -9 $(pgrep -f "virgl_test_server") 2>/dev/null
+        kill -9 $(pgrep -f "virgl") 2>/dev/null
+        echo "virgl server killed."
+    fi
+}
+
+
+start_vgl() {
+    if [ -f ~/.vgl-angle-gl ]; then
+        ANGLE_MODE=gl
+    elif [ -f ~/.vgl-angle-vulkan ]; then
+        ANGLE_MODE=vulkan
+    else
+        ANGLE_MODE=vulkan-null
+    fi
+
+    if [ ! -f /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libEGL.so.1 ]; then
+        ln -s /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libEGL_angle.so /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libEGL.so.1
+    fi
+
+    if [ ! -f /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libGLESv1_CM.so.1 ]; then
+        ln -s /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libGLESv1_CM_angle.so /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libGLESv1_CM.so.1
+    fi
+
+    if [ ! -f /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libGLESv2.so.2 ]; then
+        ln -s /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libGLESv2_angle.so /data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE}/libGLESv2.so.2
+    fi
+
+    if [[ $(pgrep -f 'virgl_test') == "" && ! -f ~/.vgl-android ]]; then
+        # export MESA_VK_WSI_PRESENT_MODE=fifo        
+        LD_LIBRARY_PATH=/data/data/com.termux/files/usr/opt/angle-android/${ANGLE_MODE} virgl_test_server --use-egl-surfaceless --use-gles &
+        sleep 1
+    elif [[ $(pgrep -f 'virgl_test') == "" && -f ~/.vgl-android ]]; then
+        virgl_test_server_android &
+        sleep 1
+    fi
+
+    if [ ! -f ~/.vgl-android ]; then
+        if [ -f ~/.vgl-angle-gl ]; then
+            echo "using virgl angle=gl."
+        elif [ -f ~/.vgl-angle-vulkan ]; then
+            echo "using virgl angle=vulkan."
+        else
+            echo "using virgl angle=vulkan-null."
+        fi
+    elif [ -f ~/.vgl-android ]; then
+       echo "using virgl android."
+    fi
+
+    if [ ! -f ~/.vgl-d3d ]; then
+        echo "with OpenGL/ES config."
+    else
+        echo "with d3d (Direct 3D) config."
+    fi
+}
+
+if [[ "$1" == "angle=vulkan" ]]; then
+    killvirgl
+    if [ -f ~/.vgl-angle-gl ]; then
+        rm -rf ~/.vgl-angle-gl
+    fi
+    touch ~/.vgl-angle-vulkan
+    start_vgl
+elif [[ "$1" == "angle=vulkan-null" ]]; then
+    killvirgl
+    if [ -f ~/.vgl-angle-vulkan ]; then
+        rm -rf ~/.vgl-angle-vulkan
+    fi
+    if [ -f ~/.vgl-angle-gl ]; then
+        rm -rf ~/.vgl-angle-gl
+    fi
+    start_vgl
+elif [[ "$1" == "angle=gl" ]]; then
+    killvirgl
+    if [ -f ~/.vgl-angle-vulkan ]; then
+        rm -rf ~/.vgl-angle-vulkan
+    fi
+    touch ~/.vgl-angle-gl
+    start_vgl
+elif [[ "$1" == "use-android" ]]; then
+    killvirgl
+    touch ~/.vgl-android
+    start_vgl
+elif [[ "$1" == "use-angle" ]]; then
+    killvirgl
+    if [ -f ~/.vgl-android ]; then
+        rm -rf ~/.vgl-android
+    fi
+    start_vgl
+elif [[ "$1" == "config=d3d" ]]; then
+    touch ~/.vgl-d3d
+    echo "using d3d (Direct 3D) config."
+elif [[ "$1" == "config=gl" ]]; then
+    if [ -f ~/.vgl-d3d ]; then
+        rm -rf ~/.vgl-d3d
+    fi
+    echo "using OpenGL/ES config."
+elif [[ "$1" == "q" ]]; then
+    killvirgl
+elif [[ "$1" == "--help" ]]; then
+   vhelp
+elif [[ "$1" == "i" ]]; then
+    echo "Installing virglrender & angle-android..."
+    pkg install virglrenderer virglrenderer-android angle-android
+ elif [[ "$1" == "update-angle" ]]; then
+    echo "Updating angle-android..."
+    cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.2-latest.deb
+    killvirgl
+    dpkg -i angle-android_2.1.2-latest.deb
+    sleep 1
+    start_vgl
+    rm -rf ~/angle-android_2.1.2-latest.deb
+    echo "done."
+elif [[ $@ ]]; then
+    start_vgl
+    "$@"
+else
+    vhelp
+fi
