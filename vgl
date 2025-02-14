@@ -56,7 +56,6 @@ killvirgl() {
 }
 
 have_angle() {
-    # the old horrible name 
     which virgl_test_server_android > /dev/null 2>&1
     old=$?
     test $old -eq 0 && VGL=virgl_test_server_android
