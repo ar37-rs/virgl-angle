@@ -74,8 +74,10 @@ to switch back using OpenGL config use command,
 ~/vgl config=gl
 ```
 
-# Note:
 for OpenGL apps/games on wine use OpenGL config as above.
+
+# Note:
+[Fix vulkan support for some devices read more from here](https://github.com/ar37-rs/virgl-angle-termux/issues/1)
 
 # Usage on proot-distro:
 Copy vgl file like so:
