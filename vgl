@@ -63,7 +63,9 @@ vhelp() {
 
 killvirgl() {
     if [[ $(pgrep -f "virgl") != "" ]]; then
-        kill -9 $(pgrep -f $VGL) 2>/dev/null
+        if [[ $(echo $VGL) != "" ]]; then
+            kill -9 $(pgrep -f $VGL) 2>/dev/null
+        fi
         kill -9 $(pgrep -f "virgl_test_server") 2>/dev/null
         kill -9 $(pgrep -f "virgl") 2>/dev/null
         echo "virgl server killed."
