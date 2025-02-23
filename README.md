@@ -30,6 +30,13 @@ or
 ```
 
 # Additional usage:
+Using OpenGL 4.3COMPAT profile, default is 4.1COMPAT
+
+(support profile OpenGL 2.1, 3.2, 3.3, 4.1 and 4.3 with COMPAT)
+```
+vgl 4.3COMPAT
+``
+
 Using angle vulkan null display (default)
 ```
 ~/vgl angle=vulkan-null
