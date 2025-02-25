@@ -1,7 +1,7 @@
 # Making virgl setup easier and simpler on termux.
 Install dependecies:
 ```
-pkg install wget virglrenderer-android virglrenderer angle-android openssl
+pkg install wget virglrenderer-android virglrenderer angle-android openssl which
 ```
 
 Install vgl
