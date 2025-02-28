@@ -109,7 +109,7 @@ cd && rm -rf ~/angle-android_2.1.24570_minimal.deb && wget https://github.com/ar
 dpkg -i ~/angle-android_2.1.24570_minimal.deb
 ```
 
-# Using virglrenderer-1.1.0 newer build (stable, android 10+ only)
+# Using virglrenderer-1.1.0 newer build (stable, android 9+ only)
 (recommended for stability);
 ```
 cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64.deb
