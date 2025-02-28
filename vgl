@@ -18,6 +18,12 @@ else
     export MESA_GLSL_VERSION_OVERRIDE=410
 fi
 
+if [ -f ~/.vgl-zink-xlib-compat ]; then
+    echo "zink xlib compat enabled"
+    export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
+    export LIBGL_DRIVERS_PATH=$PREFIX/lib/dri
+fi
+
 # export VTEST_USE_COMPATIBILITY_PROFILE=1
 # export MESA_GLTHREAD=true
 export MESA_GLES_VERSION_OVERRIDE=3.1
@@ -144,7 +150,15 @@ start_vgl() {
     fi
 }
 
-if [[ "$1" == "angle=vulkan" ]]; then
+if [[ "$1" == "xlib-compat=true" ]]; then
+    touch ~/.vgl-zink-xlib-compat
+    echo "zink xlib compat activated."
+elif [[ "$1" == "xlib-compat=false" ]]; then
+    if [ -f ~/.vgl-zink-xlib-compat ]; then
+        rm -rf ~/.vgl-zink-xlib-compat
+    fi
+    echo "zink xlib compat deactivated."
+elif [[ "$1" == "angle=vulkan" ]]; then
     killvirgl
     if [ -f ~/.vgl-angle-gl ]; then
         rm -rf ~/.vgl-angle-gl
@@ -269,7 +283,7 @@ elif [[ "$1" == "--help" ]]; then
 elif [[ "$1" == "i" ]]; then
     echo "Installing virglrender & angle-android..."
     pkg install virglrenderer virglrenderer-android angle-android
- elif [[ "$1" == "update-angle" ]]; then
+elif [[ "$1" == "update-angle" ]]; then
     echo "Updating angle-android..."
     cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.2-latest.deb
     killvirgl
