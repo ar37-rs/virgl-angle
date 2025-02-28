@@ -254,10 +254,10 @@ elif [[ "$1" == "4.1COMPAT" ]]; then
         rm -rf ~/.vgl-gl43
     fi
     echo "using OpenGL 4.1COMPAT."
-elif [[ "$1" == "config=d3d" ]]; then
+elif [[ "$1" == "config=d3d" || "$1" == "cfg=d3d" ]]; then
     touch ~/.vgl-d3d
     echo "using d3d (Direct 3D) config."
-elif [[ "$1" == "config=gl" ]]; then
+elif [[ "$1" == "config=gl" || "$1" == "cfg=gl" ]]; then
     if [ -f ~/.vgl-d3d ]; then
         rm -rf ~/.vgl-d3d
     fi
