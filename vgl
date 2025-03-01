@@ -20,8 +20,6 @@ fi
 
 if [ -f ~/.vgl-zink-xlib-compat ]; then
     echo "zink xlib compat enabled"
-    export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
-    export LIBGL_DRIVERS_PATH=$PREFIX/lib/dri
 fi
 
 # export VTEST_USE_COMPATIBILITY_PROFILE=1
@@ -294,7 +292,11 @@ elif [[ "$1" == "update-angle" ]]; then
     echo "done."
 elif [[ $@ ]]; then
     start_vgl
-    "$@"
+    if [ -f ~/.vgl-zink-xlib-compat ]; then
+        LD_LIBRARY_PATH= "$@"
+    else
+        "$@"
+    fi
 else
     vhelp
 fi
