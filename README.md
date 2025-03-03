@@ -30,11 +30,13 @@ or
 ```
 
 # Additional usage:
-Using OpenGL 4.3COMPAT profile, default is 4.1COMPAT
+Using different version of OpenGL COMPAT
 
-(support profile OpenGL 2.1, 3.2, 3.3, 4.1 and 4.3 with COMPAT)
+(default is 4.1COMPAT)
+
+support profile OpenGL 2.1, 3.2, 3.3, 4.1 and 4.3 with ```COMPAT``` like so
 ```
-vgl 4.3COMPAT
+vgl 3.3COMPAT
 ```
 
 Using angle vulkan null display (default)
