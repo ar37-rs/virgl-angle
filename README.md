@@ -116,20 +116,10 @@ cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64.deb && wget https://github.com/ar3
 dpkg -i ~/virglrenderer_1.1.0-11_aarch64.deb
 ```
 
-# Using virglrenderer-1.1.0 with patched direct xcb connection (unstable and not recommended, android 8+ only)
-still very buggy (can be used with specific patched mesa virpipe driver):
-```
-cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64-patched.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64-patched.deb
-dpkg -i ~/virglrenderer_1.1.0-11_aarch64-patched.deb
-```
-
-and then repeat usage above.
+and then repeat usage above as needed.
 
 # source code building angle-android from termux official:
 https://github.com/termux/termux-packages/tree/master/packages/angle-android
-
-# source code building virglrenderer direct connection from termux official:
-https://github.com/termux/termux-packages/tree/virglrenderer-direct-x-connection/packages/virglrenderer-android
 
 # Thanks to:
 [Termux Team and Maintainers]( https://github.com/termux) and many other contributors for making termux things happen.
