@@ -105,7 +105,7 @@ cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs
 dpkg -i ~/angle-android_2.1.2-latest.deb
 ```
 
-### Using virglrenderer-1.1.0 or newer build (stable, android 9+ only)
+#### Using virglrenderer-1.1.0 or newer build (stable, android 9+ only)
 (recommended for stability);
 ```
 ~/vgl update-renderer
