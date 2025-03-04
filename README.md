@@ -87,15 +87,16 @@ to switch back using OpenGL config use command,
 for OpenGL apps/games on wine use OpenGL config as above.
 
 # Note:
-Fix vulkan support for some devices
+#### Fix vulkan support for some devices
 
 [such encountered on this issue](https://github.com/ar37-rs/virgl-angle/issues/1)
 ```
 pkg remove *icd-swrast && pkg install vulkan-loader-generic wget openssl && cd && rm -rf ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && dpkg -i ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
 ```
 
-#### Using angle-android latest build fix for vulkan crashing on some android 9+
-prebuilt vulkan with validation layer (more stable) 13.9 MB:
+#### Using angle-android latest prebuilt
+
+with vulkan validation layer (13.9 MB+, android 9+ only):
 ```
 ~/vgl update-angle
 ```
@@ -105,8 +106,9 @@ cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs
 dpkg -i ~/angle-android_2.1.2-latest.deb
 ```
 
-#### Using virglrenderer-1.1.0 or newer build (stable, android 9+ only)
-(recommended for stability);
+#### Using virglrenderer-1.1.0 or newer build (stable, android 9+ only):
+
+(recommended for stability)
 ```
 ~/vgl update-renderer
 ```
