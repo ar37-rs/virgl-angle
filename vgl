@@ -305,10 +305,19 @@ elif [[ "$1" == "update-angle" ]]; then
     echo "Updating angle-android..."
     cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/angle-android_2.1.2-latest.deb
     killvirgl
-    dpkg -i angle-android_2.1.2-latest.deb
+    dpkg -i ~/angle-android_2.1.2-latest.deb
     sleep 1
     start_vgl
     rm -rf ~/angle-android_2.1.2-latest.deb
+    echo "done."
+elif [[ "$1" == "update-renderer" ]]; then
+    echo "Updating virglrenderer..."
+    cd && rm -rf ~/virglrenderer-1.1.0-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.0-latest_aarch64.deb
+    killvirgl
+    dpkg -i ~/virglrenderer_1.1.0-latest_aarch64.deb
+    sleep 1
+    start_vgl
+    rm -rf ~/virglrenderer_1.1.0-latest_aarch64.deb
     echo "done."
 elif [[ $@ ]]; then
     start_vgl
