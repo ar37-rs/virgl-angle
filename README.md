@@ -64,7 +64,7 @@ Update angle-android with the latest build (for android 9+ only)
 ~/vgl update-angle
 ```
 
-# Usage on wine:
+# Usage for wine:
 Fix virglrenderer-v1.x.x such incorrect color on d3d
 
 (Direct X) apps/games use d3d config like so:
@@ -94,13 +94,7 @@ Fix vulkan support for some devices
 pkg remove *icd-swrast && pkg install vulkan-loader-generic wget openssl && cd && rm -rf ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && dpkg -i ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
 ```
 
-# Usage on proot-distro:
-Copy vgl file like so:
-```
-cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
-```
-
-# Using angle-android latest build fix for vulkan crashing on some android 9+
+#### Using angle-android latest build fix for vulkan crashing on some android 9+
 prebuilt vulkan with validation layer (more stable) 13.9 MB:
 ```
 ~/vgl update-angle
@@ -111,7 +105,7 @@ cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs
 dpkg -i ~/angle-android_2.1.2-latest.deb
 ```
 
-# Using virglrenderer-1.1.0 or newer build (stable, android 9+ only)
+### Using virglrenderer-1.1.0 or newer build (stable, android 9+ only)
 (recommended for stability);
 ```
 ~/vgl update-renderer
@@ -121,10 +115,15 @@ or
 cd && rm -rf ~/virglrenderer-1.1.0-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.0-latest_aarch64.deb
 dpkg -i ~/virglrenderer_1.1.0-latest_aarch64.deb
 ```
+# Usage on proot-distro:
+Copy vgl file like so:
+```
+cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
+```
 
 and then repeat usage above as needed.
 
-# source code building angle-android from termux official:
+# Source code building angle-android from termux official:
 https://github.com/termux/termux-packages/tree/master/packages/angle-android
 
 # Thanks to:
