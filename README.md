@@ -6,7 +6,7 @@ pkg install wget virglrenderer-android virglrenderer angle-android openssl which
 
 ### Install vgl
 ```
-cd && rm -rf ~/vgl && wget https://github.com/ar37-rs/angle-termux/raw/refs/heads/main/vgl && chmod +x ~/vgl
+cd && rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle/raw/refs/heads/main/vgl && chmod +x ~/vgl
 ```
 
 # Usage (on desktop environment native termux-x11):
