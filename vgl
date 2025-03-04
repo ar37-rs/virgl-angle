@@ -303,7 +303,7 @@ elif [[ "$1" == "i" ]]; then
     pkg install virglrenderer virglrenderer-android angle-android
 elif [[ "$1" == "update-angle" ]]; then
     echo "Updating angle-android..."
-    cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.2-latest.deb
+    cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/angle-android_2.1.2-latest.deb
     killvirgl
     dpkg -i angle-android_2.1.2-latest.deb
     sleep 1

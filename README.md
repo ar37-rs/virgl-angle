@@ -6,7 +6,7 @@ pkg install wget virglrenderer-android virglrenderer angle-android openssl which
 
 Install vgl
 ```
-cd && rm -rf ~/vgl && wget https://github.com/ar37-rs/virgl-angle-termux/raw/refs/heads/main/vgl && chmod +x ~/vgl
+cd && rm -rf ~/vgl && wget https://github.com/ar37-rs/angle-termux/raw/refs/heads/main/vgl && chmod +x ~/vgl
 ```
 
 # Usage (on desktop environment native termux-x11):
@@ -65,7 +65,8 @@ Update angle-android with the latest build (for android 9+ only)
 ```
 
 # Usage on wine:
-If there's some color issues (if not, skip this), to fix virglrenderer-v1.x.x such incorrect color (or too dark) on d3d
+Fix virglrenderer-v1.x.x such incorrect color on d3d
+
 (Direct X) apps/games use d3d config like so:
 ```
 ~/vgl cfg=d3d
@@ -88,9 +89,9 @@ for OpenGL apps/games on wine use OpenGL config as above.
 # Note:
 Fix vulkan support for some devices
 
-[such encountered on this issue](https://github.com/ar37-rs/virgl-angle-termux/issues/1)
+[such encountered on this issue](https://github.com/ar37-rs/virgl-angle/issues/1)
 ```
-pkg remove *icd-swrast && pkg install vulkan-loader-generic wget openssl && cd && rm -rf ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && dpkg -i ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
+pkg remove *icd-swrast && pkg install vulkan-loader-generic wget openssl && cd && rm -rf ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && dpkg -i ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
 ```
 
 # Usage on proot-distro:
@@ -102,20 +103,23 @@ cp /data/data/com.termux/files/home/vgl /usr/bin/vgl && chmod +x /usr/bin/vgl
 # Using angle-android latest build fix for vulkan crashing on some android 9+
 prebuilt vulkan with validation layer (more stable) 13.9 MB:
 ```
-cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.2-latest.deb
+~/vgl update-angle
+```
+or
+```
+cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/angle-android_2.1.2-latest.deb
 dpkg -i ~/angle-android_2.1.2-latest.deb
 ```
-or minimal version (for android 7+) without vulkan validation layer 2.9 MB:
-```
-cd && rm -rf ~/angle-android_2.1.24570_minimal.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/angle-android_2.1.24570_minimal.deb
-dpkg -i ~/angle-android_2.1.24570_minimal.deb
-```
 
-# Using virglrenderer-1.1.0 newer build (stable, android 9+ only)
+# Using virglrenderer-1.1.0 or newer build (stable, android 9+ only)
 (recommended for stability);
 ```
-cd && rm -rf ~/virglrenderer_1.1.0-11_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle-termux/releases/download/latest/virglrenderer_1.1.0-11_aarch64.deb
-dpkg -i ~/virglrenderer_1.1.0-11_aarch64.deb
+~/vgl update-renderer
+```
+or
+```
+cd && rm -rf ~/virglrenderer-1.1.0-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.0-latest_aarch64.deb
+dpkg -i ~/virglrenderer_1.1.0-latest_aarch64.deb
 ```
 
 and then repeat usage above as needed.
