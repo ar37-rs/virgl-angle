@@ -36,7 +36,7 @@ Using different version of OpenGL COMPAT
 
 support profile OpenGL 2.1, 3.2, 3.3, 4.1 and 4.3 with ```COMPAT``` like so
 ```
-vgl 3.3COMPAT
+vgl 4.3COMPAT
 ```
 
 Using angle vulkan null display (default)
