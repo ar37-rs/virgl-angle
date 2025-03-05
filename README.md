@@ -49,11 +49,6 @@ Using angle vulkan
 ~/vgl angle=vulkan
 ```
 
-Using angle gl/es
-```
-~/vgl angle=gl
-```
-
 Terminate running virgl process
 ```
 ~/vgl q
