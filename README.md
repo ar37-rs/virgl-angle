@@ -16,7 +16,7 @@ Make sure to set config before launching your app like so:
 ```
 ~/vgl use-angle
 ```
-or use virgl android (fix for some gpus unable to use angle-vulkan issue)
+or use fallback virgl android (fix for some gpus unable to use angle-vulkan issue)
 ```
 ~/vgl use-android
 ```
