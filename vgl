@@ -313,8 +313,8 @@ elif [[ "$1" == "update-angle" ]]; then
 elif [[ "$1" == "update-renderer" || "$1" == "update-virgl" ]]; then
     echo "Updating virglrenderer..."
     cd && rm -rf ~/virglrenderer-1.1.1-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.1-latest_aarch64.deb
-    killvirgl
     dpkg -i ~/virglrenderer_1.1.1-latest_aarch64.deb
+    killvirgl
     sleep 1
     start_vgl
     rm -rf ~/virglrenderer_1.1.1-latest_aarch64.deb
