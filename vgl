@@ -310,7 +310,7 @@ elif [[ "$1" == "update-angle" ]]; then
     start_vgl
     rm -rf ~/angle-android_2.1.2-latest.deb
     echo "done."
-elif [[ "$1" == "update-renderer" ]]; then
+elif [[ "$1" == "update-renderer" || "$1" == "update-virgl" ]]; then
     echo "Updating virglrenderer..."
     cd && rm -rf ~/virglrenderer-1.1.1-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.1-latest_aarch64.deb
     killvirgl
