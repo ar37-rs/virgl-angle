@@ -101,16 +101,16 @@ cd && rm -rf ~/angle-android_2.1.2-latest.deb && wget https://github.com/ar37-rs
 dpkg -i ~/angle-android_2.1.2-latest.deb
 ```
 
-#### Using virglrenderer-1.1.0 or newer build (stable, android 10+ only):
+#### Using virglrenderer-1.1.1 or newer build (stable, android 10+ only):
 
 (recommended for stability)
 ```
-~/vgl update-renderer
+~/vgl update-virgl
 ```
 or
 ```
-cd && rm -rf ~/virglrenderer-1.1.0-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.0-latest_aarch64.deb
-dpkg -i ~/virglrenderer_1.1.0-latest_aarch64.deb
+cd && rm -rf ~/virglrenderer-1.1.1-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.1-latest_aarch64.deb
+dpkg -i ~/virglrenderer_1.1.1-latest_aarch64.deb
 ```
 # Usage on proot-distro:
 Copy vgl file like so:
