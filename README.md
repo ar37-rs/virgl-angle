@@ -91,7 +91,7 @@ pkg remove *icd-swrast && pkg install vulkan-loader-generic wget && cd && rm -rf
 
 #### Using angle-android latest prebuilt
 
-with vulkan validation layer (13.9 MB+, android 9+ only):
+with vulkan validation layer (14 MB+, android 10+ only):
 ```
 ~/vgl update-angle
 ```
