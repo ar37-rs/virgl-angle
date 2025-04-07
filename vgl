@@ -48,22 +48,22 @@ if [ ! -f ~/.vgl-d3d ]; then
     elif [ -f ~/.vgl-gl33 ]; then
         export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility"
     elif [ -f ~/.vgl-gl43 ]; then
-        export MESA_EXTENSION_OVERRIDE="+GL_ARB_compute_shader +GL_ARB_compute_variable_group_size +GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
+        export MESA_EXTENSION_OVERRIDE="+GL_ARB_texture_view +GL_ARB_compute_shader +GL_ARB_compute_variable_group_size +GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
     else
         export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
     fi
 elif [ ~/.vgl-d3d ]; then
     if [ -f ~/.vgl-gl21 ]; then
         export MESA_GLES_VERSION_OVERRIDE=2.0
-        export MESA_EXTENSION_OVERRIDE="-GL_EXT_texture_sRGB -GL_EXT_texture_sRGB_R8 -GL_EXT_texture_sRGB_RG8"
+        export MESA_EXTENSION_OVERRIDE="-GL_EXT_texture_sRGB"
     elif [ -f ~/.vgl-gl32 ]; then
-        export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp -GL_EXT_texture_sRGB -GL_EXT_texture_sRGB_R8 -GL_EXT_texture_sRGB_RG8"
+        export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp -GL_EXT_texture_sRGB"
     elif [ -f ~/.vgl-gl33 ]; then
-        export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB -GL_EXT_texture_sRGB_R8 -GL_EXT_texture_sRGB_RG8"
+        export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB"
     elif [ -f ~/.vgl-gl43 ]; then
-        export MESA_EXTENSION_OVERRIDE="+GL_ARB_compute_shader +GL_ARB_compute_variable_group_size +GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB -GL_EXT_texture_sRGB_R8 -GL_EXT_texture_sRGB_RG8 +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
+        export MESA_EXTENSION_OVERRIDE="+GL_ARB_texture_view +GL_ARB_compute_shader +GL_ARB_compute_variable_group_size +GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
     else
-        export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB -GL_EXT_texture_sRGB_R8 -GL_EXT_texture_sRGB_RG8 +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
+        export MESA_EXTENSION_OVERRIDE="+GL_ARB_depth_clamp +GL_ARB_blend_func_extended +GL_ARB_ES3_1_compatibility +GL_ARB_ES3_compatibility -GL_EXT_texture_sRGB +GL_ARB_shader_atomic_counters +GL_ARB_shader_atomic_counter_ops"
     fi
 fi
 
@@ -313,8 +313,8 @@ elif [[ "$1" == "update-angle" ]]; then
 elif [[ "$1" == "update-renderer" || "$1" == "update-virgl" ]]; then
     echo "Updating virglrenderer..."
     cd && rm -rf ~/virglrenderer-1.1.1-latest_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/virglrenderer_1.1.1-latest_aarch64.deb
-    dpkg -i ~/virglrenderer_1.1.1-latest_aarch64.deb
     killvirgl
+    dpkg -i ~/virglrenderer_1.1.1-latest_aarch64.deb
     sleep 1
     start_vgl
     rm -rf ~/virglrenderer_1.1.1-latest_aarch64.deb
