@@ -124,3 +124,5 @@ https://github.com/termux/termux-packages/tree/master/packages/angle-android
 # Thanks to:
 [Termux Team and Maintainers]( https://github.com/termux) and many other contributors for making termux things happen.
 
+[GameNative](https://github.com/utkarshdalal/GameNative) by utkarshdalal for his excellent vulkan wrapper.
+
