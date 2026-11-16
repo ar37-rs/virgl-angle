@@ -84,7 +84,7 @@ for OpenGL apps/games on wine use OpenGL config as above.
 # Note:
 #### Fix vulkan support for some devices
 ```
-pkg install vulkan-loader-generic wget && cd && rm -rf ~/wrapper-gamenative_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/wrapper-gamenative_aarch64.deb && dpkg -i ~/wrapper-gamenative_aarch64.deb
+pkg install vulkan-loader-generic wget && cd && rm -rf ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && wget https://github.com/ar37-rs/virgl-angle/releases/download/latest/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb && dpkg -i ~/mesa-vulkan-icd-wrapper_25.0.0-1_aarch64.deb
 ```
 
 #### Using angle-android latest prebuilt
